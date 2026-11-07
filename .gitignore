@@ -1,0 +1,7 @@
+.uniac/
+.private/
+.env
+.env.*
+*.key
+*.pem
+__pycache__/

@@ -1,0 +1,18 @@
+runtime: yaml
+resources:
+  opencode-definition:
+    type: singleton
+    build: .
+    vcpu: 1
+    memory_mib: 2048
+    volumes:
+      - name: data
+        size_gb: 10
+        mount_path: /data
+  opencode:
+    type: deployment
+    from: opencode-definition
+    replicas: 1
+    public_ports:
+      - port: 4096
+        type: http
